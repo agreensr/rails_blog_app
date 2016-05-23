@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  # before_action will call the private method set_article of the methods shown. 
+  # instead of @article = Article.find params[:id] being redundant in all of methods in before_action.
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
     # This displays all of the articles in the database using @articles plural, then calling Article.all
@@ -9,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+
   end
 
   def create
@@ -23,7 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
+
     if @article.update(article_params)
       flash[:notice] = "Article was successfully updated"
       redirect_to article_path(@article)
@@ -34,19 +37,23 @@ class ArticlesController < ApplicationController
 
   def show
    # Im going to find the article bast on the article ID.
-    @article = Article.find(params[:id])
+
   end
 
   def destroy
-    @article = Article.find(params[:id])
+
     @article.destroy
     flash[:notice] = "Article was successfully deleted"
     redirect_to articles_path
   end
 
   private
+    def set_article
+      @article = Article.find(params[:id])
+    end
     def article_params
       params.require(:article).permit(:title, :description)
     end
+
 
 end
