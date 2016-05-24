@@ -1,2 +1,49 @@
+$navbar-default-bg: black; /* This is how I override bootstraps default settings. Make sure its on top of the @imports*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.center{
+  text-align: center;
+
+}
+
+.jumbotron{
+  background-image: asset-url('callout_background.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+.jumbotron h1{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge{
+  font-size: 1.7em;
+  background-color: black;
+  color: #ffff
+}
+
+.btn-primary:hover {
+  background: white;
+}

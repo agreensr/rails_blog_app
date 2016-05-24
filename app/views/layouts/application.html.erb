@@ -7,9 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
- <%-# This will render the Flash message that has been moved to the _messages.html.erb DRY -%>
- <%= render 'layouts/messages' %>
-<%= yield %>
+  <%-# This will render the Flash message that has been moved to the _messages.html.erb DRY -%>
+  <%= render 'layouts/navigation' %>
+  <%= render 'layouts/messages' %>
+  <div class="container"> 
+   <%= yield %>
+  </div>
+  
 
 </body>
 </html>
