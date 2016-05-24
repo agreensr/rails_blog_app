@@ -44,8 +44,24 @@ $navbar-default-bg: black; /* This is how I override bootstraps default settings
   color: #ffff
 }
 
-.btn-primary:hover {
-  background: white;
+.btn-primary {
+    color: #fff;
+    background-color: #3f625c;
+    border-color: #a6805c; /*set the color you want here*/
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #a6805c;
+    background-color: black;
+    border-color: #a6805c; /*set the color you want here*/
+}
+
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
 }
 
 footer {
