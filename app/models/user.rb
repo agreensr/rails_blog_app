@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # One user has_many articles
+  has_many :articles
+  #Before an email address is saved to the db it will be converted to downcase.
+  before_save { self.email = email.downcase }
   validates :username, presence: true,
             uniqueness: { case_sensitve: false },
             length: {minimum: 3, maximum: 25 }

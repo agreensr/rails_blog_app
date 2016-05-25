@@ -10,11 +10,13 @@
   <%-# This will render the Flash message that has been moved to the _messages.html.erb DRY -%>
   <%= render 'layouts/navigation' %>
   <%= render 'layouts/messages' %>
-  <div class="container"> 
+  <div class="container">
    <%= yield %>
   </div>
   <%= render 'layouts/footer' %>
-  
+  <%-# this is to show debuging messages on screen -%>
+  <%= debug(params) if Rails.env.development? %>
+
 
 </body>
 </html>
