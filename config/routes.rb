@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
   get 'about', to: 'pages#about'
-  
+
   # Creates my articles route paths ie index, edit, new, show, update, destroy
   resources :articles
+  # This is the route for my signup page
+  get 'signup', to: 'users#new'
+  # I can use either the post or the resources to post the newly created user
+  # post 'users', to: 'users#create'
+  resources :users, except: [:new]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
