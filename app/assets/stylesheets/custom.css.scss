@@ -64,6 +64,11 @@ $navbar-default-bg: black; /* This is how I override bootstraps default settings
   margin-top: 0;
 }
 
+.article-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+
 .article-title {
   font-weight: bold;
   font-size: 1.5em;
@@ -72,7 +77,7 @@ $navbar-default-bg: black; /* This is how I override bootstraps default settings
 .article-body {
   border-top: 1px solid #eaeaea;
   padding-top: 15px;
-  padding-botton: 15px;
+  padding-bottom: 15px;
 }
 
 footer {
