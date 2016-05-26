@@ -80,6 +80,13 @@ $navbar-default-bg: black; /* This is how I override bootstraps default settings
   padding-bottom: 15px;
 }
 
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
