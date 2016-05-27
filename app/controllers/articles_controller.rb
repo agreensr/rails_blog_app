@@ -2,6 +2,12 @@ class ArticlesController < ApplicationController
   # before_action will call the private method set_article of the methods shown.
   # instead of @article = Article.find params[:id] being redundant in all of methods in before_action.
   before_action :set_article, only: [:edit, :update, :show, :destroy]
+  # This before_action prevents a non logged_in user from editing, updating,
+  # showing or destroying a users articles.
+  before_action :require_user, except: [:index, :show]
+  # This before_action prevents a logged_in user from editing, updating or destroying
+  # another users articles.
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     # This displays all of the articles in the database using @articles plural, then calling Article.all
@@ -57,6 +63,13 @@ class ArticlesController < ApplicationController
     end
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+
+    def require_same_user
+      if current_user != @article.user
+        flash[:danger] = "You can only edit or delete your own articles"
+        redirect_to root_path
+      end
     end
 
 

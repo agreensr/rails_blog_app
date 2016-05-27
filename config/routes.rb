@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   # I can use either the post or the resources to post the newly created user
   # post 'users', to: 'users#create'
   resources :users, except: [:new]
+  # Below is the login routes
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
