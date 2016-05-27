@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
   def create
 #  Use the debugger for the create article method, make sure to delete the
 #  code in the application.html.erb file below footer.
-    debugger
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
