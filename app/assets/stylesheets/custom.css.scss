@@ -85,7 +85,16 @@ $navbar-default-bg: black; /* This is how I override bootstraps default settings
   padding-left: 0;
 }
 
+.badge {
+  background-color: #CEF6F5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
 
+.input_checkbox input {
+  width: auto !important;
+}
 
 footer {
   margin-top: 45px;
