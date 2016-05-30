@@ -1,1 +1,4 @@
-My first ruby blog app.
+This is a ruby on rails blog app. It has an authentication system so users can
+login. It has aritcle and category associations. The app is not visually appealing
+as I wanted to get to the core of creating a rails app.
+Here is the heroku link. https://meetup-blog-agreen.herokuapp.com
